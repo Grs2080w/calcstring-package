@@ -1,0 +1,15 @@
+{
+  "name": "calcstring",
+  "version": "1.0.4",
+  "type": "module",
+  "main": "calcstring.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HommaTech/mql-simplify.git"
+  },
+  "keywords": ["mql5", "mql", "metatrader"],
+  "author": "Gabriel Santos",
+  "license": "MIT",
+  "description": "A package that receives a numeric expression as a string, which may contain addition, subtraction, multiplication, division, and power. It may also contain parentheses. The calculations are solved in the logical order of expression and operation. It has a separate function for each operation, and one that can calculate all of them together, or just one. Each function is capable of solving more than one occurrence of its operand, so: '5+5+5' correctly returns 15. That's it."
+}
