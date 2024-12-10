@@ -1,5 +1,5 @@
 
-function soma(x) {
+function soma(x='') {
     var l = x.lastIndexOf('+')
     var v1 = x.slice(0, l)
     var v2 = x.slice(l + 1, x.length)
@@ -11,7 +11,7 @@ soma('5+1')
 
 
 
-function dividir(x) {
+function dividir(x='') {
     var l = x.indexOf('/')
     var v1 = x.slice(0, l)
     var v2 = x.slice(l + 1, x.length)
@@ -23,7 +23,7 @@ dividir('15/3')
 
 
 
-function multiplicar(x) {
+function multiplicar(x='') {
     var l = x.indexOf('*')
     var v1 = x.slice(0, l)
     var v2 = x.slice(l + 1, x.length)
@@ -35,7 +35,7 @@ multiplicar('5*2')
 
 
 
-function subtracão(x) {
+function subtracão(x='') {
     var l = x.lastIndexOf('-')
     var v1 = x.slice(0, l)
     var v2 = x.slice(l + 1, x.length)
@@ -47,7 +47,7 @@ subtracão('7-5')
 
 
 
-function potencia(x) {
+function potencia(x='') {
     if (x.indexOf('*') != -1) {
         var l = x.indexOf('*')
         var v1 = Number(x.slice(0, l))
@@ -63,7 +63,7 @@ function potencia(x) {
 potencia('5^2')
 
 
-function porce(x) {
+function porce(x='') {
     if (x.indexOf('+') != -1) {
         var l = x.indexOf('+')
         var v1 = Number(x.slice(0, l))
@@ -95,7 +95,7 @@ porce('5-5%')
 
 
 var re2
-function calcSimple(v) {
+function calcSimple(v='') {
     
     if (v.indexOf('+') != -1) {
         re2 = soma(v)
@@ -112,7 +112,7 @@ function calcSimple(v) {
 }
 
 
-function tiraParen(t) {
+function tiraParen(t='') {
     if (t.indexOf('(') == -1) {
         return t
     } else {
@@ -135,7 +135,9 @@ function tiraParen(t) {
 }
 
 
-function calc2(x) {
+function calc2(x='') {
+
+    
 
     if (x.length == 2 || x.indexOf('/') == -1 && x.indexOf('*') == -1 && x.indexOf('+') == -1 && x.indexOf('-') == -1 && x.indexOf('^') == -1) {
         return x
@@ -340,6 +342,8 @@ function calc2(x) {
 
         } 
         re = `${re}`
+        
+        
         return calc2(re)
         
     }
@@ -349,22 +353,27 @@ function calc2(x) {
 
 
 function calculator(x='') {
+    
     var r = tiraParen(x)
+    
     var final = calc2(r)
     return Number(final)
 }
 
-export {
-    calculator,
-    calc2,
-    tiraParen,
-    dividir,
-    soma,
-    subtracão,
-    multiplicar,
-    potencia,
-    porce
+
+
+module.exports = {
+    calculator: calculator,
+    calc2: calc2,
+    tiraParen: tiraParen,
+    dividir: dividir,
+    soma: soma,
+    subtracão: subtracão,
+    multiplicar: multiplicar,
+    potencia: potencia,
+    porce: porce
 }
+
 
 
 

@@ -1,7 +1,7 @@
 {
   "name": "calcstring",
   "version": "1.0.8",
-  "type": "module",
+  "type": "commonjs",
   "main": "calcstring.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
